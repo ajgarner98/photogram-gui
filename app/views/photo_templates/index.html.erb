@@ -1,0 +1,90 @@
+
+
+<ul>
+  <li>
+    <a href = "/users">
+      Users
+    </a>
+  </li>
+
+  <li>
+    <a href = "/photos">
+      Photos
+    </a>
+  </li>
+</ul>
+
+<div>
+  <h1> List of Photos </h1>
+</div>
+<form action = "/<%=@the_user%>">
+
+  <label for = "image_box"> 
+    Image 
+  </label>
+  <input type = "text" id = "image_box" name = "image_query" value = "Enter an Image URL">
+
+  <label for = "caption_box"> 
+    Username
+  </label>
+  <input type = "text" id = "caption_box" name = "caption_query" value = "Enter a Caption">
+
+  <label for = "id_box"> 
+    Username
+  </label>
+  <input type = "text" id = "id_box" name = "id_query" value = "Enter an ID">
+
+
+
+  <button>
+    Add Photo
+  </button>
+
+<hr>
+
+<table border = 1>
+  <tr>
+    <th>
+      Image
+    </th>
+
+    <th>
+      Caption
+    </th>
+
+    <th>
+      Owner
+    </th>
+
+    <th>
+      Posted
+    </th>
+
+    <td>
+
+    </td>
+  </tr>
+  <% @list_of_all_photos.each do |photo| %>
+    <tr>
+      <td> 
+          <img src = "<%= photo.image %>">
+      </td>
+
+      <td> 
+          <%= photo.caption %>
+      </td>
+
+      <td> 
+          <%= photo.poster.username %>
+      </td>
+
+      <td> 
+          <%= photo.created_at %>
+      </td>
+
+      <td>
+        <a href = "/photos/<%=photo.id%>">Show details </a>
+      </td>
+    </tr>
+  <%end%>
+</table>

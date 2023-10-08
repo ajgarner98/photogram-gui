@@ -6,6 +6,8 @@ class UserController < ApplicationController
   end
 
   def show
+    @the_user = params.fetch("user_name")
+    @the_name = User.where({:username => @the_user }).at(0)
     render({:template => "user_templates/show"})
   end
 

@@ -1,0 +1,43 @@
+<ul>
+  <li>
+    <a href = "/users">
+      Users
+    </a>
+  </li>
+
+  <li>
+    <a href = "/photos">
+      Photos
+    </a>
+  </li>
+</ul>
+<div>
+  <h1><%=@the_user%></h1>
+</div>
+
+<div>
+  ID
+<div>
+
+<div>
+  <%=@the_name.id%>
+<div>
+
+<div>
+  Edit User
+</div>
+
+<form action = "/<%=@the_user%>">
+
+  <label for = "user_name_box"> 
+    Username
+  </label>
+  <input type = "text" id = "user_name_box" name = "user_name" value = "<%=@the_user%>">
+
+
+
+  <button>
+    Update user
+  </button>
+
+</form>
