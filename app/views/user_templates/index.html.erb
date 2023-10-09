@@ -16,14 +16,12 @@
   <h1> List of Users </h1>
 </div>
 
-<form action = "/<%=@the_user%>">
+<form action = "/insert_user" method = "post">
 
   <label for = "user_name_box"> 
     Username
   </label>
-  <input type = "text" id = "user_name_box" name = "user_name" value = "Enter a username">
-
-
+  <input type = "text" id = "user_name_box" name = "user_name" placeholder = "Enter a username">
 
   <button>
     Add user

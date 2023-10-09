@@ -17,6 +17,10 @@
 </div>
 
 <div>
+  <img src ="<%=@the_photos.image%>">
+</div>
+
+<div>
   Caption
 </div>
 <div>
@@ -33,10 +37,38 @@
 <div>
   Posted
 </div>
-
 <div>
   <%=@the_photos.created_at%>
 </div>
+
+<div>
+  Edit Photo
+</div>
+
+<form action = "/update_photo/<%=@the_photos.id%>" method = "post">
+
+  <label for = "image_box"> 
+    Image 
+  </label>
+  <input type = "text" id = "image_box" name = "image_query" placeholder = "Enter an Image URL">
+
+  <label for = "caption_box"> 
+    Caption
+  </label>
+  <input type = "text" id = "caption_box" name = "caption_query" placeholder = "Enter a Caption">
+
+
+  <button>
+    Update Photo
+  </button>
+<form>
+
+<div>
+  <a href =  "/delete_photo/<%= @the_photos.id%>">
+  Delete this Photo
+  </a>
+</div>
+
 
 <div>
   <table>

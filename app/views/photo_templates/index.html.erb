@@ -17,29 +17,29 @@
 <div>
   <h1> List of Photos </h1>
 </div>
-<form action = "/<%=@the_user%>">
+<form action = "/insert_photo" method = "post">
 
   <label for = "image_box"> 
     Image 
   </label>
-  <input type = "text" id = "image_box" name = "image_query" value = "Enter an Image URL">
+  <input type = "text" id = "image_box" name = "image_query" placeholder = "Enter an Image URL">
 
   <label for = "caption_box"> 
-    Username
+    Caption
   </label>
-  <input type = "text" id = "caption_box" name = "caption_query" value = "Enter a Caption">
+  <input type = "text" id = "caption_box" name = "caption_query" placeholder = "Enter a Caption">
 
   <label for = "id_box"> 
     Username
   </label>
-  <input type = "text" id = "id_box" name = "id_query" value = "Enter an ID">
+  <input type = "text" id = "id_box" name = "id_query" placeholder = "Enter an ID">
 
 
 
   <button>
     Add Photo
   </button>
-
+<form>
 <hr>
 
 <table border = 1>
