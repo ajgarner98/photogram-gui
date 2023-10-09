@@ -50,18 +50,19 @@
   <label for = "image_box"> 
     Image 
   </label>
-  <input type = "text" id = "image_box" name = "image_query" placeholder = "Enter an Image URL">
+  <input type = "text" id = "image_box" name = "image_query" value = "<%=@the_photos.image%>">
 
   <label for = "caption_box"> 
     Caption
   </label>
-  <input type = "text" id = "caption_box" name = "caption_query" placeholder = "Enter a Caption">
+  <textarea type = "text" id = "caption_box" name = "caption_query" placeholder = "Enter a Caption"> Some text
+  </textarea>
 
 
   <button>
-    Update Photo
+    Update photo
   </button>
-<form>
+</form>
 
 <div>
   <a href =  "/delete_photo/<%= @the_photos.id%>">
@@ -103,3 +104,28 @@
     <%end%>
   </table>
 </div>
+
+<form action = "/add_comment" method = "post">
+
+  <label for = "id_box"> 
+    Photo ID
+  </label>
+  <input type = "text" id = "id_box" name = "id_query" value = "<%=@the_photos.id%>" >
+
+  <label for = "author_box"> 
+    Author ID
+  </label>
+  <input type = "text" id = "author_box" name = "author_query" placeholder = "Enter a Comment">
+
+  <label for = "comment_box"> 
+    Comment
+  </label>
+  <textarea type = "text" id = "comment_box" name = "comment_query" placeholder = "Enter a Comment">something
+  </textarea>
+
+
+  <button>
+    Add comment
+  </button>
+
+</form>

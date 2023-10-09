@@ -39,3 +39,50 @@
   </button>
 
 </form>
+<h1> Own Photos <%=@the_name.own_photos.count%></h1>
+<table border = 1>
+  <tr>
+    <th>
+      Image
+    </th>
+
+    <th>
+      Caption
+    </th>
+
+    <th>
+      Owner
+    </th>
+
+    <th>
+      Posted
+    </th>
+
+    <td>
+
+    </td>
+  </tr>
+  <% @the_name.own_photos.each do |photo| %>
+    <tr>
+      <td> 
+          <img src = "<%= photo.image %>">
+      </td>
+
+      <td> 
+          <%= photo.caption %>
+      </td>
+
+      <td> 
+          <%= photo.poster.username %>
+      </td>
+
+      <td> 
+          <%= photo.created_at %>
+      </td>
+
+      <td>
+        <a href = "/photos/<%=photo.id%>">Show details </a>
+      </td>
+    </tr>
+  <%end%>
+</table>

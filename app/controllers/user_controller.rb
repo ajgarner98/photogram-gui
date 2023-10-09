@@ -9,6 +9,7 @@ class UserController < ApplicationController
   def show
     @the_user = params.fetch("user_name")
     @the_name = User.where({:username => @the_user }).at(0)
+    
     render({:template => "user_templates/show"})
   end
 
@@ -37,5 +38,17 @@ class UserController < ApplicationController
 
     redirect_to("/users/#{@the_user.username}") 
   
+  end
+
+  def delete
+    the_id = params.fetch("path_id")
+    matching_photos = Photo.where({:id => the_id})
+    the_photo = matching_photos.at(0)
+
+    the_photo.destroy
+
+    redirect_to("/photos")
+
+    
   end
 end
